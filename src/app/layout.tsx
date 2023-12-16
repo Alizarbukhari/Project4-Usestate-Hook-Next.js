@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-
+import "./style.css";
+import Image from 'next/image';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -16,7 +17,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header style={{backgroundColor:"lightblue",
+      padding:"3rem", }}>
+<p>Header</p>
+      </header>
+      {/* <img src="/pic.jpg" height={200} width={1350} alt="not found" /> */}
+        {children}
+        <footer style={{
+          backgroundColor:"lightblue",
+          padding: "3rem",
+        }}> Footer</footer>
+        </body>
     </html>
   )
 }
